@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <ImageView
+        android:id="@+id/ratingImage"
+        android:layout_width="@dimen/movie_detail_icon_size"
+        android:layout_height="@dimen/movie_detail_icon_size"
+        android:src="@drawable/ic_stars_black_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/durationImage"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/rating" />
+
+    <ImageView
+        android:id="@+id/durationImage"
+        android:layout_width="@dimen/movie_detail_icon_size"
+        android:layout_height="@dimen/movie_detail_icon_size"
+        android:src="@drawable/ic_movie_duration_black_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/statusImage"
+        app:layout_constraintStart_toEndOf="@+id/ratingImage"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/duration" />
+
+    <ImageView
+        android:id="@+id/statusImage"
+        android:layout_width="@dimen/movie_detail_icon_size"
+        android:layout_height="@dimen/movie_detail_icon_size"
+        android:src="@drawable/ic_local_movies_status_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/durationImage"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/movie_status" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingSubtitle"
+        style="@style/MovieDetailSubtitle"
+        app:layout_constraintEnd_toEndOf="@id/ratingImage"
+        app:layout_constraintStart_toStartOf="@id/ratingImage"
+        app:layout_constraintTop_toBottomOf="@id/ratingImage"
+        android:text="9,8"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/durationSubtitle"
+        style="@style/MovieDetailSubtitle"
+        app:layout_constraintEnd_toEndOf="@id/durationImage"
+        app:layout_constraintStart_toStartOf="@id/durationImage"
+        app:layout_constraintTop_toBottomOf="@id/durationImage"
+        android:text="99m"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/statusSubtitle"
+        style="@style/MovieDetailSubtitle"
+        app:layout_constraintEnd_toEndOf="@id/statusImage"
+        app:layout_constraintStart_toStartOf="@id/statusImage"
+        app:layout_constraintTop_toBottomOf="@id/statusImage"
+        android:text="Post Production"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

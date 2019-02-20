@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="movie_detail_icon_size">28dp</dimen>
+    <dimen name="movie_wallpaper_height">230dp</dimen>
+    <dimen name="movie_poster_width">85dp</dimen>
+</resources>

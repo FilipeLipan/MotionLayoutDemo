@@ -1,0 +1,183 @@
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="200">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:moveWhenScrollAtTop="true"
+            app:touchAnchorId="@id/recycler"
+            app:touchAnchorSide="top" />
+
+        <KeyFrameSet>
+
+            <KeyPosition
+                app:framePosition="20"
+                app:keyPositionType="deltaRelative"
+                app:percentY="0.65"
+                app:target="@id/movie" />
+
+            <KeyAttribute
+                android:rotation="45"
+                android:rotationY="15"
+                app:framePosition="20"
+                app:target="@id/movie" />
+
+            <KeyAttribute
+                android:elevation="1dp"
+                app:framePosition="60"
+                app:target="@id/recycler" />
+
+            <KeyAttribute
+                android:elevation="0dp"
+                app:framePosition="75"
+                app:target="@id/faketoolbar" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="75"
+                app:target="@id/gender" />
+
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@id/toolbarImage2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/movie_wallpaper_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Constraint
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="0dp"
+            android:id="@+id/faketoolbar"
+            app:layout_constraintTop_toBottomOf="@id/toolbarImage2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/gender"/>
+
+        <Constraint
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/recycler"
+            android:elevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbarImage2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <Constraint
+            android:layout_width="@dimen/movie_poster_width"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/movie"
+            android:elevation="1dp"
+            app:layout_constraintDimensionRatio="h,1:1.5"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="150dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/movie"/>
+
+        <Constraint
+            android:id="@+id/gender"
+            android:alpha="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintEnd_toEndOf="@id/title"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@id/toolbarImage2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/movie_wallpaper_height"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+        <Constraint
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:id="@+id/movie"
+            android:elevation="0dp"
+            app:layout_constraintDimensionRatio="h,1:1.5"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/movie"/>
+
+
+        <Constraint
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="1dp"
+            android:id="@+id/faketoolbar"
+            app:layout_constraintTop_toBottomOf="@id/toolbarImage2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/gender"/>
+
+
+        <Constraint
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/recycler"
+            android:elevation="1dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbarImage2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <Constraint
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/faketoolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="20dp" />
+
+        <Constraint
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="3dp"
+            android:id="@+id/faketoolbar"
+            android:background="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Constraint
+            android:id="@+id/gender"
+            android:alpha="0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:paddingBottom="4dp"
+            app:layout_constraintEnd_toEndOf="@id/title"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+    </ConstraintSet>
+</MotionScene>
